@@ -27,7 +27,7 @@ npm test
 The site contains no forms, accounts or server-side business logic. It is therefore exported as static HTML, CSS and assets for GitHub Pages. A custom GitHub Actions workflow builds the Vinext source and writes the deployment bundle to `dist/pages`.
 
 ```bash
-BASE_PATH=/adaptance-website npm run export:pages
+BASE_PATH=/adaptance npm run export:pages
 ```
 
 `BASE_PATH` supports the default GitHub Pages project URL. Set it to an empty string when a custom domain is connected.

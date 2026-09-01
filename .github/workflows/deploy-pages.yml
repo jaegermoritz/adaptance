@@ -36,7 +36,7 @@ jobs:
       - name: Export static site
         run: npm run export:pages
         env:
-          BASE_PATH: /adaptance-website
+          BASE_PATH: /adaptance
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
