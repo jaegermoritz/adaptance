@@ -1,10 +1,8 @@
 import { Handshake, Network, Route, Search, ShieldCheck, Users } from "lucide-react";
 
 const linkedinUrl = "https://www.linkedin.com/in/moritz-jaeger-innovator";
-const workshopImageUrl =
-  "https://images.unsplash.com/flagged/photo-1550946107-8842ae9426db?auto=format&fit=crop&w=1800&q=82";
-const teamImageUrl =
-  "https://images.pexels.com/photos/13701583/pexels-photo-13701583.jpeg?auto=compress&cs=tinysrgb&w=1600";
+const workshopImageUrl = "/images/workshop-mapping-sebastien-bonneval.jpg";
+const teamImageUrl = "/images/team-collaboration-luke-miller.jpg";
 
 function BrandLockup({ light = false }: { light?: boolean }) {
   return (
