@@ -12,8 +12,7 @@ export default function PrivacyPage() {
     <main className="privacy-page">
       <header className="privacy-header">
         <a className="brand-lockup" href="/" aria-label="Back to Adaptance">
-          <img src="/adaptance-mark.svg" alt="" width="34" height="34" />
-          <span>Adaptance</span>
+          <img src="/adaptance-logo.svg" alt="Adaptance" width="760" height="160" />
         </a>
         <a className="text-link" href="/">
           Back to website

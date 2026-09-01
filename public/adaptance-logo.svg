@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160" role="img" aria-labelledby="title desc">
   <title id="title">Adaptance</title>
-  <desc id="desc">Adaptance wordmark with the threshold mark.</desc>
-  <g>
-    <path fill="#F5F1E8" d="M0 0h120v120H0z"/>
-    <path fill="#0A4F52" d="M16 14h88v30H48v32h56v30H16z"/>
-    <path fill="#D8A03B" d="M54 44h30L62 76H32z"/>
-  </g>
-  <text x="150" y="73" fill="#0A4F52" font-family="Aptos, Segoe UI, Source Sans 3, Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="5">ADAPTANCE</text>
+  <desc id="desc">The Adaptance wordmark in deep teal with a short amber baseline.</desc>
+  <text x="8" y="94" fill="#0A4F52" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" letter-spacing="7">ADAPTANCE</text>
+  <rect x="8" y="119" width="104" height="7" fill="#D8A03B"/>
 </svg>

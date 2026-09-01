@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
-  <title id="title">Adaptance threshold mark</title>
-  <desc id="desc">A stable deep teal structure opened by a precise amber cut.</desc>
-  <path fill="#F5F1E8" d="M0 0h120v120H0z"/>
-  <path fill="#0A4F52" d="M16 14h88v30H48v32h56v30H16z"/>
-  <path fill="#D8A03B" d="M54 44h30L62 76H32z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Adaptance compact mark</title>
+  <desc id="desc">The letters AD in warm white on deep teal with an amber baseline.</desc>
+  <rect width="512" height="512" rx="52" fill="#0A4F52"/>
+  <text x="72" y="294" fill="#FBF9F4" font-family="Arial, Helvetica, sans-serif" font-size="190" font-weight="700" letter-spacing="12">AD</text>
+  <rect x="75" y="347" width="142" height="18" fill="#D8A03B"/>
 </svg>

@@ -9,8 +9,12 @@ const teamImageUrl =
 function BrandLockup({ light = false }: { light?: boolean }) {
   return (
     <span className={`brand-lockup${light ? " brand-lockup-light" : ""}`}>
-      <img src="/adaptance-mark.svg" alt="" width="34" height="34" />
-      <span>Adaptance</span>
+      <img
+        src={light ? "/adaptance-logo-light.svg" : "/adaptance-logo.svg"}
+        alt="Adaptance"
+        width="760"
+        height="160"
+      />
     </span>
   );
 }
@@ -24,7 +28,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand-link" href="#top" aria-label="Adaptance home">
-          <BrandLockup />
+          <BrandLockup light />
         </a>
         <nav className="site-nav" aria-label="Primary navigation">
           <a href="#sprint">The sprint</a>
