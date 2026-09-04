@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 const linkedinUrl = "https://www.linkedin.com/in/moritz-jaeger-innovator";
 
@@ -11,12 +12,12 @@ export default function PrivacyPage() {
   return (
     <main className="privacy-page">
       <header className="privacy-header">
-        <a className="brand-lockup" href="/" aria-label="Back to Adaptance">
-          <img src="/adaptance-logo.svg" alt="Adaptance" width="760" height="160" />
-        </a>
-        <a className="text-link" href="/">
+        <Link className="brand-lockup" href="/" aria-label="Back to Adaptance">
+          <img src="/adaptance-logo.svg" alt="Adaptance" width="900" height="180" />
+        </Link>
+        <Link className="text-link" href="/">
           Back to website
-        </a>
+        </Link>
       </header>
 
       <div className="privacy-shell">

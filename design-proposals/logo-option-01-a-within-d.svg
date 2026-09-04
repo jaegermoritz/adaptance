@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Adaptance logo option 01: A within D</title>
+  <desc id="desc">Final Adaptance logo system showing the symbol, horizontal lockup and small-size icon.</desc>
+  <rect width="900" height="420" fill="#F5F1E8"/>
+  <path fill="#0A4F52" fill-rule="evenodd" d="M76 58h114c86 0 138 48 138 128s-52 128-138 128H76V58Zm102 70-60 150h36l14-38h62l14 38h38l-60-150h-44Zm4 78 16-44 18 44h-34Z"/>
+  <text x="388" y="206" fill="#0A4F52" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="8">ADAPTANCE</text>
+  <rect x="710" y="274" width="88" height="88" rx="10" fill="#0A4F52"/>
+  <path fill="#FBF9F4" fill-rule="evenodd" d="M720 283h31.4c23.7 0 38 13.2 38 35.2s-14.3 35.3-38 35.3H720v-70.5Zm28.1 19.3-16.5 41.3h9.9l3.9-10.5h17l3.9 10.5h10.5l-16.5-41.3h-12.2Zm1.1 21.5 4.4-12.1 4.9 12.1h-9.3Z"/>
+</svg>

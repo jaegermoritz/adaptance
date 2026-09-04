@@ -35,8 +35,12 @@ test("renders the Adaptance landing page with local production assets", async ()
   assert.match(html, /The Adaptance Sprint/);
   assert.match(html, /Reveal\. Align\. Act\./);
   assert.match(html, /adaptance-logo-light\.svg/);
+  assert.match(html, /adaptance-mark\.svg/);
   assert.match(html, /images\/workshop-mapping-sebastien-bonneval\.jpg/);
   assert.match(html, /images\/team-collaboration-luke-miller\.jpg/);
+  assert.match(html, /One accountable delivery line/);
+  assert.match(html, /Finance &amp; grants/);
+  assert.match(html, /Built around the challenge, not a staffing chart\./);
 });
 
 test("renders the Adaptance privacy policy", async () => {

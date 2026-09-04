@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">Adaptance compact mark</title>
-  <desc id="desc">The letters AD in warm white on deep teal with an amber baseline.</desc>
-  <rect width="512" height="512" rx="52" fill="#0A4F52"/>
-  <text x="72" y="294" fill="#FBF9F4" font-family="Arial, Helvetica, sans-serif" font-size="190" font-weight="700" letter-spacing="12">AD</text>
-  <rect x="75" y="347" width="142" height="18" fill="#D8A03B"/>
+  <title id="title">Adaptance A within D mark</title>
+  <desc id="desc">An A discovered in the negative space of a bold D.</desc>
+  <rect width="512" height="512" rx="56" fill="#0A4F52"/>
+  <path fill="#FBF9F4" fill-rule="evenodd" d="M58 51h182.4C378.1 51 461 127.8 461 256s-82.9 205-220.6 205H58V51Zm163.4 112.1-96.2 240.2H183l22.4-60.9h99.1l22.5 60.9h60.9l-96.1-240.2h-70.4Zm6.5 124.9 25.6-70.5 28.8 70.5h-54.4Z"/>
 </svg>

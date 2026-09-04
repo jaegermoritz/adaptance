@@ -30,15 +30,15 @@ The site contains no forms, accounts or server-side business logic. It is theref
 BASE_PATH=/adaptance npm run export:pages
 ```
 
-`BASE_PATH` supports the default GitHub Pages project URL. Set it to an empty string when a custom domain is connected.
+`BASE_PATH` supports the temporary GitHub Pages project URL. The final public domain is `adaptance.org`; publish with an empty base path on its production host.
 
 The current public production version is also deployed through OpenAI Sites. The same source can later be served from Hetzner without changing the page content or asset structure.
 
 ## Brand assets
 
-- `public/adaptance-logo.svg`: primary wordmark on light backgrounds
-- `public/adaptance-logo-light.svg`: primary wordmark on dark backgrounds
-- `public/adaptance-mark.svg`: compact functional mark for app icons
+- `public/adaptance-logo.svg`: A within D combination mark on light backgrounds
+- `public/adaptance-logo-light.svg`: reversed combination mark on dark backgrounds
+- `public/adaptance-mark.svg`: compact A within D mark for app icons
 - `public/adaptance-mark-512.png`: 512 × 512 app icon
 - `public/favicon.svg`: browser favicon
 

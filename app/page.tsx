@@ -1,4 +1,21 @@
-import { Handshake, Network, Route, Search, ShieldCheck, Users } from "lucide-react";
+import {
+  ClipboardCheck,
+  Code2,
+  FlaskConical,
+  Handshake,
+  Landmark,
+  ListChecks,
+  Network,
+  RefreshCwOff,
+  Route,
+  ScanSearch,
+  Search,
+  ShieldCheck,
+  Signpost,
+  Unplug,
+  Users,
+  Waypoints,
+} from "lucide-react";
 
 const linkedinUrl = "https://www.linkedin.com/in/moritz-jaeger-innovator";
 const workshopImageUrl = "/images/workshop-mapping-sebastien-bonneval.jpg";
@@ -10,8 +27,8 @@ function BrandLockup({ light = false }: { light?: boolean }) {
       <img
         src={light ? "/adaptance-logo-light.svg" : "/adaptance-logo.svg"}
         alt="Adaptance"
-        width="760"
-        height="160"
+        width="900"
+        height="180"
       />
     </span>
   );
@@ -33,7 +50,9 @@ export default function Home() {
           <a href="#method">Method</a>
           <a href="#team">Team</a>
           <a className="nav-cta" href={linkedinUrl} target="_blank" rel="noreferrer">
-            Start a conversation <Arrow />
+            <span className="nav-cta-long">Start a conversation</span>
+            <span className="nav-cta-short">Let&apos;s talk</span>
+            <Arrow />
           </a>
         </nav>
       </header>
@@ -58,7 +77,8 @@ export default function Home() {
             </a>
           </div>
           <p className="hero-audience">
-            For leaders in health, education, development, innovation and emerging ventures.
+            For leaders in health, education, international development, innovation and emerging
+            ventures.
           </p>
         </div>
 
@@ -103,6 +123,22 @@ export default function Home() {
         </div>
       </section>
 
+      <aside className="delivery-band" aria-label="Adaptance team capabilities">
+        <div className="delivery-band-lead">
+          <img src="/adaptance-mark.svg" alt="" width="512" height="512" aria-hidden="true" />
+          <div>
+            <span>A small, reliable team</span>
+            <strong>One accountable delivery line</strong>
+          </div>
+        </div>
+        <div className="delivery-capabilities">
+          <span><Network aria-hidden="true" /> Systems &amp; change</span>
+          <span><Code2 aria-hidden="true" /> Software delivery</span>
+          <span><Landmark aria-hidden="true" /> Finance &amp; grants</span>
+          <span><ClipboardCheck aria-hidden="true" /> Programmes</span>
+        </div>
+      </aside>
+
       <section className="friction-section" aria-labelledby="friction-heading">
         <div className="section-rail">
           <span>01</span>
@@ -111,7 +147,11 @@ export default function Home() {
         <div className="friction-content">
           <p className="eyebrow">The technology is rarely the whole problem</p>
           <h2 id="friction-heading">More tools will not fix an absorption problem.</h2>
-          <div className="friction-grid">
+          <p className="section-lead">
+            New tools can be visible immediately. Their consequences for decisions, routines,
+            ownership and trust emerge later inside the real system of work.
+          </p>
+          <div className="friction-grid" aria-label="Three layers where change gets stuck">
             <span className="friction-path" aria-hidden="true" />
             <article>
               <span>VISIBLE</span>
@@ -141,12 +181,11 @@ export default function Home() {
               height="1100"
               loading="lazy"
               decoding="async"
-              referrerPolicy="no-referrer"
             />
             <figcaption>
               <div>
-                <span>Make the work visible</span>
-                <strong>Shared maps turn assumptions into a conversation.</strong>
+                <span>Reveal</span>
+                <strong>Shared maps turn assumptions into a practical conversation.</strong>
               </div>
               <a
                 href="https://unsplash.com/photos/man-in-gray-shirt-facing-sticky-notes-UIpFY1Umamw"
@@ -175,10 +214,10 @@ export default function Home() {
             signals into a clear diagnosis, a priority decision and a focused route into action.
           </p>
           <div className="sprint-outputs" aria-label="Adaptance Sprint outputs">
-            <div><span>01</span><strong>Constraint map</strong></div>
-            <div><span>02</span><strong>Priority map</strong></div>
-            <div><span>03</span><strong>Experiment backlog</strong></div>
-            <div><span>04</span><strong>First implementation steps</strong></div>
+            <div><ScanSearch aria-hidden="true" /><span>01</span><strong>Constraint map</strong></div>
+            <div><ListChecks aria-hidden="true" /><span>02</span><strong>Priority decision</strong></div>
+            <div><FlaskConical aria-hidden="true" /><span>03</span><strong>Experiment backlog</strong></div>
+            <div><Route aria-hidden="true" /><span>04</span><strong>First implementation steps</strong></div>
           </div>
           <a className="button button-paper" href={linkedinUrl} target="_blank" rel="noreferrer">
             Discuss a sprint with the team <Arrow />
@@ -239,14 +278,17 @@ export default function Home() {
           <h2 id="trigger-heading">The ambition is clear, but the route into real work is not.</h2>
           <div className="trigger-list">
             <article>
+              <Signpost aria-hidden="true" />
               <span>01</span>
               <p>AI interest is high, but no one agrees where to start.</p>
             </article>
             <article>
+              <RefreshCwOff aria-hidden="true" />
               <span>02</span>
               <p>A promising pilot refuses to become normal work.</p>
             </article>
             <article>
+              <Unplug aria-hidden="true" />
               <span>03</span>
               <p>A digital workflow looks efficient on paper but creates shadow work underneath.</p>
             </article>
@@ -264,15 +306,14 @@ export default function Home() {
           <figure className="team-photo">
             <img
               src={teamImageUrl}
-              alt="Two professionals reviewing documents and working together at a laptop"
+              alt="Independent professionals working together around a table"
               width="1600"
               height="1067"
               loading="lazy"
               decoding="async"
-              referrerPolicy="no-referrer"
             />
             <figcaption>
-              <span>Collaboration in practice</span>
+              <strong>A small core. Trusted specialists when the work requires them.</strong>
               <a
                 href="https://www.pexels.com/photo/people-sitting-at-a-table-writing-and-using-laptop-13701583/"
                 target="_blank"
@@ -284,47 +325,35 @@ export default function Home() {
           </figure>
 
           <div
-            className="team-model"
+            className="team-map"
             role="img"
-            aria-label="Adaptance forms one accountable engagement team from a trusted network of specialists"
+            aria-label="Systems, software, finance and programme specialists form one accountable team around the client challenge"
           >
-            <div className="team-model-heading">
+            <div className="team-map-heading">
               <span>How the team works</span>
-              <strong>Flexible expertise. Clear accountability.</strong>
+              <strong>Expertise surrounds the challenge.</strong>
             </div>
-            <div className="team-flow" aria-hidden="true">
-              <span className="team-flow-progress"><i /></span>
-              <div className="team-stage team-stage-network">
-                <small>01</small>
-                <strong>Trusted network</strong>
-                <span>Finance · Software · Programmes · Change</span>
-              </div>
-              <div className="team-stage team-stage-match">
-                <small>02</small>
-                <strong>Right mix</strong>
-                <span>Selected for the challenge</span>
-              </div>
-              <div className="team-stage team-stage-core">
-                <small>03</small>
-                <strong>One accountable team</strong>
-                <span>Clear lead · Shared standards</span>
-              </div>
+            <div className="team-map-grid" aria-hidden="true">
+              <div className="team-node team-node-change"><Network /><strong>Systems &amp; change</strong></div>
+              <div className="team-node team-node-software"><Code2 /><strong>Software</strong></div>
+              <div className="team-core"><span>Client challenge</span><strong>One accountable team</strong></div>
+              <div className="team-node team-node-finance"><Landmark /><strong>Finance &amp; grants</strong></div>
+              <div className="team-node team-node-programmes"><ClipboardCheck /><strong>Programmes</strong></div>
             </div>
-            <p className="team-model-caption">
-              Independent specialists today. A stable core team as Adaptance grows.
-            </p>
+            <p>Independent specialists today. A stable core team as Adaptance grows.</p>
           </div>
         </div>
+
         <div className="team-copy">
           <p className="section-index team-section-index">
             <span>05</span>
             <span>A small, reliable team</span>
           </p>
-          <h2 id="team-heading">Small by design. Built for reliable delivery.</h2>
+          <h2 id="team-heading">Built around the challenge, not a staffing chart.</h2>
           <p className="team-lead">
-            Adaptance works through a trusted network of independent specialists, bringing
-            systems thinking, finance, software delivery and programme leadership around one
-            practical challenge.
+            Adaptance works through a trusted network of independent specialists who already know
+            how to work together. Each engagement brings systems thinking, finance, software
+            delivery and programme leadership around one practical challenge.
           </p>
           <p>
             For clients and funding partners, that creates one clear line of responsibility without
@@ -341,22 +370,15 @@ export default function Home() {
               <span>One clear lead from diagnosis through delivery.</span>
             </article>
             <article>
-              <Network aria-hidden="true" />
+              <Handshake aria-hidden="true" />
               <strong>Complementary expertise</strong>
               <span>The right disciplines around one shared problem.</span>
             </article>
             <article>
-              <Handshake aria-hidden="true" />
+              <Waypoints aria-hidden="true" />
               <strong>Continuity by design</strong>
               <span>Knowledge and responsibility do not sit with one person.</span>
             </article>
-          </div>
-          <div className="experience-line" aria-label="Adaptance capability areas">
-            <span>Systems and change</span>
-            <span>Finance and commercial thinking</span>
-            <span>Software and digital delivery</span>
-            <span>Programme management</span>
-            <span>Health and development</span>
           </div>
           <a className="text-link" href={linkedinUrl} target="_blank" rel="noreferrer">
             Start a conversation with Adaptance <Arrow />
