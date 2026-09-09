@@ -1,0 +1,389 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BrandLockup from "../components/BrandLockup.astro";
+import Icon from "../components/Icon.astro";
+import {
+  homeDescription,
+  homeTitle,
+  linkedinUrl,
+  teamImageUrl,
+  workshopImageUrl,
+} from "../site";
+---
+
+<BaseLayout title={homeTitle} description={homeDescription}>
+  <main>
+    <header class="site-header">
+      <a class="brand-link" href="#top" aria-label="Adaptance home">
+        <BrandLockup light />
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#sprint">The sprint</a>
+        <a href="#method">Method</a>
+        <a href="#team">Team</a>
+        <a class="nav-cta" href={linkedinUrl} target="_blank" rel="noreferrer">
+          <span class="nav-cta-long">Start a conversation</span>
+          <span class="nav-cta-short">Let's talk</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">AI adoption · Digital transformation · Organizational change</p>
+        <h1>
+          Technology moves fast.
+          <span>Make change workable.</span>
+        </h1>
+        <p class="hero-intro">
+          Adaptance helps leaders turn AI and digital ambition into clearer priorities, better
+          workflows and focused experiments that teams can actually carry.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-amber" href={linkedinUrl} target="_blank" rel="noreferrer">
+            Start a readiness conversation <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-link text-link-light" href="#sprint">
+            Explore the Adaptance Sprint <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <p class="hero-audience">
+          For leaders in health, education, international development, innovation and emerging
+          ventures.
+        </p>
+      </div>
+
+      <div
+        class="reality-map"
+        role="img"
+        aria-label="A reality map showing how visible AI activity, underlying work and organizational constraints lead to focused action"
+      >
+        <div class="map-heading">
+          <span>Reality map / 01</span>
+          <strong>Look beneath the rollout.</strong>
+        </div>
+        <div class="map-track" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="map-layer map-visible">
+          <span class="layer-label">Visible</span>
+          <div class="layer-items">
+            <b>AI strategy</b>
+            <b>Training</b>
+            <b>Pilots</b>
+          </div>
+        </div>
+        <div class="map-layer map-underlying">
+          <span class="layer-label">Underlying</span>
+          <div class="layer-items">
+            <b>Workarounds</b>
+            <b>Slow decisions</b>
+            <b>Shadow workflows</b>
+          </div>
+        </div>
+        <div class="map-layer map-constraint">
+          <span class="layer-label">Constraint</span>
+          <strong>Coordination capacity</strong>
+          <small>Ownership · trust · priorities · operating reality</small>
+        </div>
+        <div class="map-action">
+          <span class="layer-label">Action</span>
+          <strong>One focused experiment</strong>
+          <span class="action-arrow" aria-hidden="true">→</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="delivery-band" aria-label="Adaptance team capabilities">
+      <div class="delivery-band-lead">
+        <img src="/adaptance-mark.svg" alt="" width="512" height="512" aria-hidden="true" />
+        <div>
+          <span>A small, reliable team</span>
+          <strong>One accountable delivery line</strong>
+        </div>
+      </div>
+      <div class="delivery-capabilities">
+        <span><Icon name="network" /> Systems &amp; change</span>
+        <span><Icon name="code-2" /> Software delivery</span>
+        <span><Icon name="landmark" /> Finance &amp; grants</span>
+        <span><Icon name="clipboard-check" /> Programmes</span>
+      </div>
+    </aside>
+
+    <section class="friction-section" aria-labelledby="friction-heading">
+      <div class="section-rail">
+        <span>01</span>
+        <p>The real gap</p>
+      </div>
+      <div class="friction-content">
+        <p class="eyebrow">The technology is rarely the whole problem</p>
+        <h2 id="friction-heading">More tools will not fix an absorption problem.</h2>
+        <p class="section-lead">
+          New tools can be visible immediately. Their consequences for decisions, routines,
+          ownership and trust emerge later inside the real system of work.
+        </p>
+        <div class="friction-grid" aria-label="Three layers where change gets stuck">
+          <span class="friction-path" aria-hidden="true"></span>
+          <article>
+            <span>VISIBLE</span>
+            <h3>Interest is high.</h3>
+            <p>New tools, pilots and workshops keep appearing.</p>
+          </article>
+          <article>
+            <span>UNDERLYING</span>
+            <h3>Real work shifts quietly.</h3>
+            <p>People create shortcuts, parallel routines and invisible dependencies.</p>
+          </article>
+          <article class="friction-accent">
+            <span>CONSTRAINT</span>
+            <h3>Capacity stays the same.</h3>
+            <p>Priorities, decisions, ownership and trust cannot absorb the change.</p>
+          </article>
+        </div>
+        <p class="friction-conclusion">
+          Adaptance starts where most transformation programmes stop: inside the real system of
+          work.
+        </p>
+        <figure class="work-figure">
+          <img
+            src={workshopImageUrl}
+            alt="A team mapping a workflow together with sticky notes"
+            width="1800"
+            height="1100"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            <div>
+              <span>Reveal</span>
+              <strong>Shared maps turn assumptions into a practical conversation.</strong>
+            </div>
+            <a
+              href="https://unsplash.com/photos/man-in-gray-shirt-facing-sticky-notes-UIpFY1Umamw"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Photo · Sebastien Bonneval / Unsplash
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="sprint-section" id="sprint" aria-labelledby="sprint-heading">
+      <div class="sprint-title">
+        <p class="section-index section-index-light">02 / A practical starting point</p>
+        <p class="sprint-kicker">Focused advisory engagement</p>
+        <h2 id="sprint-heading">The Adaptance Sprint</h2>
+        <p class="sprint-promise">
+          One stuck challenge. One shared reality. One executable next move.
+        </p>
+      </div>
+      <div class="sprint-body">
+        <p>
+          Bring a concrete AI, digital or organizational challenge. Together, we turn scattered
+          signals into a clear diagnosis, a priority decision and a focused route into action.
+        </p>
+        <div class="sprint-outputs" aria-label="Adaptance Sprint outputs">
+          <div><Icon name="scan-search" /><span>01</span><strong>Constraint map</strong></div>
+          <div><Icon name="list-checks" /><span>02</span><strong>Priority decision</strong></div>
+          <div><Icon name="flask-conical" /><span>03</span><strong>Experiment backlog</strong></div>
+          <div><Icon name="route" /><span>04</span><strong>First implementation steps</strong></div>
+        </div>
+        <a class="button button-paper" href={linkedinUrl} target="_blank" rel="noreferrer">
+          Discuss a sprint with the team <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="method-section" id="method" aria-labelledby="method-heading">
+      <div class="method-intro">
+        <p class="section-index">03 / The Adaptance method</p>
+        <h2 id="method-heading">Reveal. Align. Act.</h2>
+        <p>
+          A simple operating sequence for moving from a visible symptom to change that holds in
+          real work.
+        </p>
+      </div>
+      <div class="method-steps">
+        <article>
+          <div class="method-card-top">
+            <span class="method-number">01</span>
+            <Icon name="search" />
+          </div>
+          <p class="method-verb">Reveal</p>
+          <h3>What is really happening beneath the visible issue?</h3>
+          <p>Map workflows, decisions, incentives, skills, trust and operational constraints.</p>
+          <strong class="method-output">Output · Reality and constraint map</strong>
+        </article>
+        <article>
+          <div class="method-card-top">
+            <span class="method-number">02</span>
+            <Icon name="users" />
+          </div>
+          <p class="method-verb">Align</p>
+          <h3>What matters now, and what can the system realistically carry?</h3>
+          <p>Bring people, processes and priorities into one practical direction.</p>
+          <strong class="method-output">Output · Priority decision</strong>
+        </article>
+        <article class="method-action">
+          <div class="method-card-top">
+            <span class="method-number">03</span>
+            <Icon name="route" />
+          </div>
+          <p class="method-verb">Act</p>
+          <h3>Which experiment changes real work first?</h3>
+          <p>Translate insight into workflow changes, use cases and implementation steps.</p>
+          <strong class="method-output">Output · Action backlog</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="trigger-section" aria-labelledby="trigger-heading">
+      <div class="section-rail section-rail-dark">
+        <span>04</span>
+        <p>When to call</p>
+      </div>
+      <div class="trigger-content">
+        <p class="eyebrow eyebrow-amber">Bring Adaptance in when...</p>
+        <h2 id="trigger-heading">The ambition is clear, but the route into real work is not.</h2>
+        <div class="trigger-list">
+          <article>
+            <Icon name="signpost" />
+            <span>01</span>
+            <p>AI interest is high, but no one agrees where to start.</p>
+          </article>
+          <article>
+            <Icon name="refresh-cw-off" />
+            <span>02</span>
+            <p>A promising pilot refuses to become normal work.</p>
+          </article>
+          <article>
+            <Icon name="unplug" />
+            <span>03</span>
+            <p>A digital workflow looks efficient on paper but creates shadow work underneath.</p>
+          </article>
+        </div>
+        <div class="focus-band">
+          <span>AI readiness</span>
+          <span>Workflow modernization</span>
+          <span>Implementation support</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section" id="team" aria-labelledby="team-heading">
+      <div class="team-media-stack">
+        <figure class="team-photo">
+          <img
+            src={teamImageUrl}
+            alt="Independent professionals working together around a table"
+            width="1600"
+            height="1067"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            <strong>A small core. Trusted specialists when the work requires them.</strong>
+            <a
+              href="https://www.pexels.com/photo/people-sitting-at-a-table-writing-and-using-laptop-13701583/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Photo · Luke Miller / Pexels
+            </a>
+          </figcaption>
+        </figure>
+
+        <div
+          class="team-map"
+          role="img"
+          aria-label="Systems, software, finance and programme specialists form one accountable team around the client challenge"
+        >
+          <div class="team-map-heading">
+            <span>How the team works</span>
+            <strong>Expertise surrounds the challenge.</strong>
+          </div>
+          <div class="team-map-grid" aria-hidden="true">
+            <div class="team-node team-node-change"><Icon name="network" /><strong>Systems &amp; change</strong></div>
+            <div class="team-node team-node-software"><Icon name="code-2" /><strong>Software</strong></div>
+            <div class="team-core"><span>Client challenge</span><strong>One accountable team</strong></div>
+            <div class="team-node team-node-finance"><Icon name="landmark" /><strong>Finance &amp; grants</strong></div>
+            <div class="team-node team-node-programmes"><Icon name="clipboard-check" /><strong>Programmes</strong></div>
+          </div>
+          <p>Independent specialists today. A stable core team as Adaptance grows.</p>
+        </div>
+      </div>
+
+      <div class="team-copy">
+        <p class="section-index team-section-index">
+          <span>05</span>
+          <span>A small, reliable team</span>
+        </p>
+        <h2 id="team-heading">Built around the challenge, not a staffing chart.</h2>
+        <p class="team-lead">
+          Adaptance works through a trusted network of independent specialists who already know
+          how to work together. Each engagement brings systems thinking, finance, software
+          delivery and programme leadership around one practical challenge.
+        </p>
+        <p>
+          For clients and funding partners, that creates one clear line of responsibility without
+          pretending every challenge needs a large permanent team.
+        </p>
+        <p class="team-honesty">
+          The model is deliberately lean today. Over the coming months, selected roles will move
+          into a permanent core while Adaptance keeps the specialist flexibility of its network.
+        </p>
+        <div class="team-principles" aria-label="Adaptance team operating principles">
+          <article>
+            <Icon name="shield-check" />
+            <strong>Accountable ownership</strong>
+            <span>One clear lead from diagnosis through delivery.</span>
+          </article>
+          <article>
+            <Icon name="handshake" />
+            <strong>Complementary expertise</strong>
+            <span>The right disciplines around one shared problem.</span>
+          </article>
+          <article>
+            <Icon name="waypoints" />
+            <strong>Continuity by design</strong>
+            <span>Knowledge and responsibility do not sit with one person.</span>
+          </article>
+        </div>
+        <a class="text-link" href={linkedinUrl} target="_blank" rel="noreferrer">
+          Start a conversation with Adaptance <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="closing-question">
+        <p class="eyebrow eyebrow-amber">From uncertainty to action</p>
+        <h2>What is getting stuck between technological possibility and real work?</h2>
+      </div>
+      <div class="closing-action">
+        <p>
+          Bring one concrete challenge. We will determine whether an Adaptance Sprint is the
+          right starting point.
+        </p>
+        <a class="button button-amber" href={linkedinUrl} target="_blank" rel="noreferrer">
+          Talk it through with Adaptance <span aria-hidden="true">↗</span>
+        </a>
+        <small>Focused. Practical. No transformation theatre.</small>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <BrandLockup light />
+      <p>From uncertainty to action.</p>
+      <div>
+        <a href="/privacy/">Privacy</a>
+        <a href={linkedinUrl} target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>

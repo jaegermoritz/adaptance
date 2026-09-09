@@ -1,35 +1,17 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 
-async function loadWorker() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  return (await import(workerUrl.href)).default;
-}
+const root = fileURLToPath(new URL("..", import.meta.url));
 
-async function render(worker, pathname) {
-  const response = await worker.fetch(
-    new Request(`http://localhost${pathname}`, {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
-
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-  return response.text();
+async function readPage(relativePath) {
+  return readFile(path.join(root, relativePath), "utf8");
 }
 
 test("renders the Adaptance landing page with local production assets", async () => {
-  const html = await render(await loadWorker(), "/");
+  const html = await readPage("dist/index.html");
 
   assert.match(html, /Make change workable\./);
   assert.match(html, /The Adaptance Sprint/);
@@ -41,12 +23,17 @@ test("renders the Adaptance landing page with local production assets", async ()
   assert.match(html, /One accountable delivery line/);
   assert.match(html, /Finance &amp; grants/);
   assert.match(html, /Built around the challenge, not a staffing chart\./);
+  assert.match(html, /rel="canonical" href="https:\/\/adaptance\.org\/"/);
+  assert.match(html, /href="\/privacy\/"/);
+  assert.doesNotMatch(html, /<form\b/i);
 });
 
 test("renders the Adaptance privacy policy", async () => {
-  const html = await render(await loadWorker(), "/privacy");
+  const html = await readPage("dist/privacy/index.html");
 
   assert.match(html, /Clear by design\./);
   assert.match(html, /private, single-user social media automation tool/);
   assert.match(html, /Every externally visible\s+post or comment requires human review/);
+  assert.match(html, /rel="canonical" href="https:\/\/adaptance\.org\/privacy\/"/);
+  assert.doesNotMatch(html, /<form\b/i);
 });

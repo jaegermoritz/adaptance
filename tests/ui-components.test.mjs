@@ -19,7 +19,7 @@ async function readCssTree(directory) {
 }
 
 test("preserves the two purposeful micro-interactions", async () => {
-  const css = await readFile(path.join(root, "app", "globals.css"), "utf8");
+  const css = await readFile(path.join(root, "src", "styles", "global.css"), "utf8");
 
   assert.match(css, /@keyframes signal-shift/);
   assert.match(css, /@keyframes friction-path-x/);
@@ -36,7 +36,7 @@ test("keeps the method numbers prominent and the Act card readable", async () =>
 });
 
 test("keeps the hero accent below the headline and removes the diagonal overlay", async () => {
-  const css = await readFile(path.join(root, "app", "globals.css"), "utf8");
+  const css = await readFile(path.join(root, "src", "styles", "global.css"), "utf8");
 
   assert.match(css, /\.hero h1 span::after/);
   assert.doesNotMatch(css, /\.hero::before/);
@@ -51,4 +51,12 @@ test("ships the selected A within D mark as the compact icon", async () => {
   assert.match(mark, /fill-rule="evenodd"/);
   assert.doesNotMatch(mark, /#D8A03B/i);
   assert.match(favicon, /fill-rule="evenodd"/);
+});
+
+test("stops motion when the visitor prefers reduced motion", async () => {
+  const css = await readFile(path.join(root, "src", "styles", "global.css"), "utf8");
+  const reducedMotion = css.split("@media (prefers-reduced-motion: reduce)")[1] ?? "";
+
+  assert.match(reducedMotion, /\.map-track span \{ animation: none; \}/);
+  assert.match(reducedMotion, /\.friction-grid article::before, \.friction-path \{ animation: none; \}/);
 });

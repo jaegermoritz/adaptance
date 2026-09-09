@@ -1,0 +1,16 @@
+---
+interface Props {
+  light?: boolean;
+}
+
+const { light = false } = Astro.props;
+---
+
+<span class:list={["brand-lockup", light && "brand-lockup-light"]}>
+  <img
+    src={light ? "/adaptance-logo-light.svg" : "/adaptance-logo.svg"}
+    alt="Adaptance"
+    width="900"
+    height="180"
+  />
+</span>

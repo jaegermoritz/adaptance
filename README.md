@@ -5,32 +5,33 @@ Public website and privacy policy for Adaptance, a focused consulting team for A
 ## Pages
 
 - `/` presents the Adaptance positioning, sprint, method and team model.
-- `/privacy` covers the public website and the private social media workflow.
+- `/privacy/` covers the public website and the private social media workflow.
 
 ## Local development
 
-Requirements: Node.js 22 or newer and npm.
+Requirements: Node.js 22.13.0 or newer and npm.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-The production build can be checked with:
+Typecheck, build the static site, and run the tests with:
 
 ```bash
-npm test
+npm run verify
+```
+
+Individual commands:
+
+```bash
+npm run check
+npm run build
 ```
 
 ## Hosting
 
-The site contains no forms, accounts or server-side business logic. It is therefore exported as static HTML, CSS and assets for GitHub Pages. A custom GitHub Actions workflow builds the Vinext source and writes the deployment bundle to `dist/pages`.
-
-```bash
-BASE_PATH=/adaptance npm run export:pages
-```
-
-`BASE_PATH` supports the temporary GitHub Pages project URL. The final public domain is `adaptance.org`; publish with an empty base path on its production host.
+The site contains no forms, accounts or server-side business logic. Astro builds it as static HTML, CSS and assets in `dist/`. Canonical URLs use `https://adaptance.org`.
 
 The current public production version is also deployed through OpenAI Sites. The same source can later be served from Hetzner without changing the page content or asset structure.
 
