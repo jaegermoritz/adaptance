@@ -105,6 +105,15 @@ test("shows the four team areas as one static accountable team", async () => {
   assert.match(teamMap, /One accountable team/);
 });
 
+test("gives Reveal. Align. Act. the same section rail as the gap", async () => {
+  const html = await readPage("dist/index.html");
+  const method = html.match(/<section class="method-section"[\s\S]*?<\/section>/)?.[0] ?? "";
+
+  assert.match(method, /<div class="section-rail">/);
+  assert.match(method, /<span>04<\/span>/);
+  assert.match(method, /<p>The method<\/p>/);
+});
+
 test("keeps at most three primary conversation CTAs", async () => {
   const html = await readPage("dist/index.html");
   const conversationCtas = [

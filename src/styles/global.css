@@ -147,13 +147,13 @@ img, svg { max-width: 100%; }
 .delivery-capabilities span:last-child { border-right: 0; }
 .delivery-capabilities svg { flex: 0 0 auto; width: 19px; height: 19px; color: var(--amber); stroke-width: 1.7; }
 
-.friction-section, .trigger-section { display: grid; grid-template-columns: minmax(84px, 0.11fr) minmax(0, 1fr); }
+.friction-section, .trigger-section, .method-section { display: grid; grid-template-columns: minmax(84px, 0.11fr) minmax(0, 1fr); }
 .friction-section { background: var(--paper-light); }
 .section-rail { display: flex; align-items: center; flex-direction: column; gap: 1.1rem; padding: clamp(5rem, 8vw, 8rem) 1rem; border-right: 1px solid var(--line); color: var(--teal); }
 .section-rail span { font-size: 0.72rem; font-weight: 850; letter-spacing: 0.12em; }
 .section-rail p { margin: 0; font-size: 0.69rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; writing-mode: vertical-rl; }
 .friction-content { padding: clamp(5rem, 9vw, 9rem) 6vw; }
-.friction-content h2, .method-intro h2, .trigger-content h2, .team-copy h2, .closing-section h2, .sprint-title h2 {
+.friction-content h2, .method-content h2, .trigger-content h2, .team-copy h2, .closing-section h2, .sprint-title h2 {
   margin: 1.1rem 0 0;
   color: var(--teal-dark);
   font-size: clamp(3rem, 5.8vw, 7rem);
@@ -199,10 +199,8 @@ img, svg { max-width: 100%; }
 .sprint-outputs span { color: rgba(6, 58, 61, 0.65); font-size: 0.67rem; font-weight: 850; letter-spacing: 0.1em; }
 .sprint-outputs strong { align-self: end; font-size: 0.92rem; line-height: 1.25; }
 
-.method-section { padding: clamp(5rem, 9vw, 9rem) 7vw; background: var(--paper); }
-.method-intro { display: grid; grid-template-columns: 0.28fr 0.8fr 0.42fr; gap: 3vw; align-items: end; }
-.method-intro h2 { margin: 0; }
-.method-intro > p:last-child { margin: 0; color: var(--muted); line-height: 1.65; }
+.method-section { background: var(--paper); }
+.method-content { padding: clamp(5rem, 9vw, 9rem) 6vw; }
 .method-steps { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(3.5rem, 7vw, 7rem); border-top: 1px solid var(--teal); border-left: 1px solid var(--line); }
 .method-steps article { display: flex; min-height: 510px; padding: 2rem; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .method-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
@@ -319,7 +317,7 @@ img, svg { max-width: 100%; }
   .reality-map { max-width: 760px; min-height: 590px; }
   .delivery-band { grid-template-columns: 1fr; }
   .delivery-band-lead { border-right: 0; border-bottom: 1px solid var(--line); }
-  .method-intro { grid-template-columns: 1fr; }
+  .method-content { padding: clamp(4rem, 8vw, 6rem) 5vw; }
   .sprint-section { grid-template-columns: 1fr; }
   .sprint-body { padding-top: 0; }
   .team-section { grid-template-columns: minmax(340px, 0.72fr) minmax(0, 1fr); }
@@ -356,14 +354,14 @@ img, svg { max-width: 100%; }
   .delivery-capabilities span:nth-child(2) { border-right: 0; }
   .delivery-capabilities span:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
 
-  .friction-section, .trigger-section { display: block; }
+  .friction-section, .trigger-section, .method-section { display: block; }
   .section-rail { align-items: center; flex-direction: row; gap: 0; padding: 0; border-right: 0; border-bottom: 1px solid var(--line); }
-  .section-rail span { display: grid; place-items: center; width: 50px; min-height: 48px; background: var(--teal); color: white; }
-  .section-rail p { padding: 0 0.8rem; writing-mode: initial; }
+  .section-rail span { display: grid; place-items: center; width: 38px; min-height: 34px; background: var(--teal); color: white; font-size: 0.6rem; }
+  .section-rail p { padding: 0 0.7rem; font-size: 0.6rem; writing-mode: initial; }
   .section-rail-dark { border-bottom-color: rgba(255, 255, 255, 0.15); }
   .section-rail-dark span { background: var(--amber); color: var(--teal-dark); }
-  .friction-content, .trigger-content { padding: 4rem 1.25rem; }
-  .friction-content h2, .method-intro h2, .trigger-content h2, .team-copy h2, .closing-section h2, .sprint-title h2 { font-size: clamp(3rem, 12vw, 5rem); }
+  .friction-content, .trigger-content, .method-content { padding: 2.4rem 1.25rem; }
+  .friction-content h2, .method-content h2, .trigger-content h2, .team-copy h2, .closing-section h2, .sprint-title h2 { font-size: clamp(2.1rem, 8.4vw, 3.1rem); }
   .friction-grid { grid-template-columns: 1fr; margin-top: 2.8rem; }
   .friction-path { width: 4px; height: calc(100% / 3); animation-name: friction-path-y; }
   @keyframes friction-path-y { 0%, 28% { transform: translateY(0); } 35%, 61% { transform: translateY(100%); } 68%, 94% { transform: translateY(200%); } 100% { transform: translateY(0); } }
@@ -373,7 +371,7 @@ img, svg { max-width: 100%; }
   .work-figure img { height: 320px; }
   .work-figure figcaption { padding: 1.4rem; }
 
-  .sprint-section, .method-section, .team-section, .closing-section { padding: 4.5rem 1.25rem; }
+  .sprint-section, .team-section, .closing-section { padding: 4.5rem 1.25rem; }
   .closing-section { grid-template-columns: 1fr; }
   .sprint-kicker { margin-top: 3rem; }
   .sprint-outputs div { min-height: 122px; }
@@ -433,8 +431,8 @@ img, svg { max-width: 100%; }
   .delivery-capabilities span { min-height: 78px; padding: 0.85rem; font-size: 0.73rem; }
   .delivery-capabilities svg { width: 17px; height: 17px; }
 
-  .friction-content, .trigger-content, .sprint-section, .method-section, .team-section, .closing-section { padding-right: 1.05rem; padding-left: 1.05rem; }
-  .friction-content h2, .method-intro h2, .trigger-content h2, .team-copy h2, .closing-section h2, .sprint-title h2 { font-size: clamp(2.75rem, 12.6vw, 4rem); }
+  .friction-content, .trigger-content, .method-content, .sprint-section, .team-section, .closing-section { padding-right: 1.05rem; padding-left: 1.05rem; }
+  .friction-content h2, .method-content h2, .trigger-content h2, .team-copy h2, .closing-section h2, .sprint-title h2 { font-size: clamp(1.85rem, 7.8vw, 2.5rem); }
   .section-lead { font-size: 1rem; }
   .friction-conclusion { margin-top: 2.2rem; padding-left: 1rem; }
   .work-figure { margin-top: 3rem; }
