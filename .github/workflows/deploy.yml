@@ -1,0 +1,92 @@
+name: Deploy website to Uberspace
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: adaptance-production
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22.13.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify and build static site
+        run: npm run verify
+
+      - name: Normalize deployment settings
+        env:
+          UBERSPACE_HOST: ${{ secrets.UBERSPACE_HOST }}
+          UBERSPACE_USER: ${{ secrets.UBERSPACE_USER }}
+          UBERSPACE_DEPLOY_PATH: ${{ vars.UBERSPACE_DEPLOY_PATH }}
+        run: bash scripts/normalize-uberspace-target.sh
+
+      - name: Prepare SSH connection
+        env:
+          DEPLOY_KEY_PRIVATE: ${{ secrets.DEPLOY_KEY_PRIVATE }}
+        run: |
+          set -euo pipefail
+
+          ssh_directory="${RUNNER_TEMP}/adaptance-ssh"
+          key_path="${ssh_directory}/deploy_key"
+          known_hosts_path="${ssh_directory}/known_hosts"
+
+          install -d -m 700 "${ssh_directory}"
+          printf '%s\n' "${DEPLOY_KEY_PRIVATE}" > "${key_path}"
+          chmod 600 "${key_path}"
+          ssh-keygen -y -f "${key_path}" > /dev/null
+
+          ssh-keyscan -H -p 22 "${ADAPTANCE_UBERSPACE_HOST}" > "${known_hosts_path}"
+          chmod 600 "${known_hosts_path}"
+
+          echo "Deploy-key fingerprint:"
+          ssh-keygen -y -f "${key_path}" | ssh-keygen -lf -
+
+          echo "ADAPTANCE_SSH_KEY=${key_path}" >> "${GITHUB_ENV}"
+          echo "ADAPTANCE_KNOWN_HOSTS=${known_hosts_path}" >> "${GITHUB_ENV}"
+
+      - name: Verify Uberspace authentication
+        run: |
+          ssh \
+            -i "${ADAPTANCE_SSH_KEY}" \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o "UserKnownHostsFile=${ADAPTANCE_KNOWN_HOSTS}" \
+            "${ADAPTANCE_UBERSPACE_USER}@${ADAPTANCE_UBERSPACE_HOST}" \
+            true
+
+      - name: Upload static site
+        run: |
+          rsync \
+            --archive \
+            --compress \
+            --itemize-changes \
+            -e "ssh -i ${ADAPTANCE_SSH_KEY} -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=${ADAPTANCE_KNOWN_HOSTS}" \
+            dist/ \
+            "${ADAPTANCE_UBERSPACE_USER}@${ADAPTANCE_UBERSPACE_HOST}:${ADAPTANCE_DEPLOY_PATH}"
+
+      - name: Check public page
+        if: ${{ vars.ADAPTANCE_PUBLIC_URL != '' }}
+        env:
+          ADAPTANCE_PUBLIC_URL: ${{ vars.ADAPTANCE_PUBLIC_URL }}
+        run: curl --fail --location --retry 3 "${ADAPTANCE_PUBLIC_URL}"
