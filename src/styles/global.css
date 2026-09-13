@@ -172,6 +172,8 @@ img, svg { max-width: 100%; }
 @keyframes friction-layer { 0%, 7% { opacity: 0; } 10%, 28% { opacity: 1; } 32%, 100% { opacity: 0; } }
 @keyframes friction-path-x { 0%, 28% { transform: translateX(0); } 35%, 61% { transform: translateX(100%); } 68%, 94% { transform: translateX(200%); } 100% { transform: translateX(0); } }
 .friction-conclusion { max-width: 770px; margin: 3rem 0 0 auto; padding-left: 1.5rem; border-left: 4px solid var(--amber); color: var(--teal-dark); font-size: clamp(1.15rem, 1.8vw, 1.55rem); font-weight: 680; line-height: 1.45; }
+.friction-content .delivery-band { grid-template-columns: 1fr; margin-top: 2.5rem; border: 1px solid var(--line); }
+.friction-content .delivery-band-lead { border-right: 0; }
 .work-figure { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 0.38fr); margin: clamp(4rem, 7vw, 7rem) 0 0; overflow: hidden; background: var(--teal-dark); }
 .work-figure img { display: block; width: 100%; height: clamp(390px, 38vw, 610px); object-fit: cover; object-position: center; filter: saturate(0.88) contrast(1.02); }
 .work-figure figcaption { display: flex; align-items: flex-start; justify-content: flex-end; flex-direction: column; gap: 1.6rem; padding: clamp(1.5rem, 3vw, 3rem); color: white; }

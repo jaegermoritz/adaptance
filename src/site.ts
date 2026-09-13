@@ -4,7 +4,7 @@ export const teamImageUrl = "/images/team-collaboration-luke-miller.jpg";
 
 export const homeTitle = "Adaptance | From uncertainty to action";
 export const homeDescription =
-  "Adaptance is building a focused consulting team that helps leaders turn AI and digital ambition into clearer priorities, better workflows and practical implementation.";
+  "Adaptance helps teams decide what needs to change, who needs to own it and what to try first.";
 
 export const privacyTitle = "Privacy Policy | Adaptance";
 export const privacyDescription =
