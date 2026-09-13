@@ -23,6 +23,14 @@ if [[ -z "${UBERSPACE_DEPLOY_PATH:-}" ]]; then
 fi
 
 raw_host="${UBERSPACE_HOST#ssh://}"
+raw_host="${raw_host//$'\r'/}"
+raw_host="${raw_host#"${raw_host%%[![:space:]]*}"}"
+raw_host="${raw_host%"${raw_host##*[![:space:]]}"}"
+if [[ "${raw_host}" == *:* && "${raw_host}" != *@* ]]; then
+  raw_host="${raw_host%%:*}"
+elif [[ "${raw_host}" == *@*:* ]]; then
+  raw_host="${raw_host%:*}";
+fi
 while [[ "${raw_host}" == */ ]]; do raw_host="${raw_host%/}"; done
 while [[ "${raw_host}" == *"." ]]; do raw_host="${raw_host%.}"; done
 
@@ -36,7 +44,9 @@ if [[ "${UBERSPACE_USER}" == *"@"* ]]; then
   exit 1
 fi
 
-normalized_user="${UBERSPACE_USER}"
+normalized_user="${UBERSPACE_USER//$'\r'/}"
+normalized_user="${normalized_user#"${normalized_user%%[![:space:]]*}"}"
+normalized_user="${normalized_user%"${normalized_user##*[![:space:]]}"}"
 
 if [[ "${raw_host}" == *@* ]]; then
   embedded_user="${raw_host%@*}"

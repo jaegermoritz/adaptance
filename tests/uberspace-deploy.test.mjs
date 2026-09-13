@@ -68,6 +68,15 @@ test("requires the Uberspace deploy path and writes Adaptance SSH settings", asy
   assert.match(ok.envFile, /ADAPTANCE_UBERSPACE_USER=adaptance/);
   assert.match(ok.envFile, /ADAPTANCE_UBERSPACE_HOST=stardust\.uberspace\.de/);
   assert.match(ok.envFile, /ADAPTANCE_DEPLOY_PATH=Applications\/adaptance\.org\//);
+
+  const messy = await runNormalize({
+    UBERSPACE_HOST: "stardust.uberspace.de:22\n",
+    UBERSPACE_USER: "adaptance\r\n",
+    UBERSPACE_DEPLOY_PATH: "Applications/adaptance.org/",
+  });
+  assert.equal(messy.code, 0, messy.output);
+  assert.match(messy.envFile, /ADAPTANCE_UBERSPACE_HOST=stardust\.uberspace\.de/);
+  assert.match(messy.envFile, /ADAPTANCE_UBERSPACE_USER=adaptance/);
 });
 
 test("deploys the verified dist directory to Uberspace instead of GitHub Pages", async () => {
