@@ -19,10 +19,8 @@ function headingTexts(html, tag) {
 test("renders the Adaptance landing page with local production assets", async () => {
   const html = await readPage("dist/index.html");
 
-  assert.match(html, /Work changes more slowly\./);
   assert.match(html, /Reveal\. Align\. Act\./);
   assert.match(html, /adaptance-logo-light\.svg/);
-  assert.match(html, /adaptance-mark\.svg/);
   assert.match(html, /images\/workshop-mapping-sebastien-bonneval\.jpg/);
   assert.match(html, /images\/team-collaboration-luke-miller\.jpg/);
   assert.match(html, /Constraint map/);
@@ -37,13 +35,13 @@ test("tells the landing-page story in the agreed order", async () => {
   const [hero] = headingTexts(html, "h1");
   const sections = headingTexts(html, "h2");
 
-  assert.equal(hero, "Technology moves fast. Work changes more slowly.");
+  assert.equal(hero, "What is getting stuck between technological possibility and real work?");
   assert.deepEqual(sections, [
-    "The tool is rarely the whole problem.",
     "You know something needs to change, but the next step is unclear.",
-    "A small team, built around the work.",
+    "The tool is rarely the whole problem.",
     "Reveal. Align. Act.",
     "Start with one problem that matters.",
+    "A small team, built around the work.",
     "What keeps getting stuck in your organisation?",
   ]);
 });
@@ -66,7 +64,6 @@ test("keeps the Reality Map labels and drops inflated language", async () => {
     "the system can realistically carry",
     "route into real work",
     "transformation theatre",
-    "technological possibility",
     "staffing chart",
     "funding partners",
     "continuity by design",

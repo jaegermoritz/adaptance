@@ -33,8 +33,7 @@ import {
       <div class="hero-copy">
         <p class="eyebrow">AI adoption · Digital transformation · Organizational change</p>
         <h1>
-          Technology moves fast.
-          <span>Work changes more slowly.</span>
+          What is getting stuck between technological possibility and real work?
         </h1>
         <p class="hero-intro">
           Adaptance helps teams decide what needs to change, who needs to own it and what to try first.
@@ -91,13 +90,39 @@ import {
       </div>
     </section>
 
+
+    <section class="trigger-section" id="when" aria-labelledby="trigger-heading">
+      <div class="section-rail">
+        <span>02</span>
+        <p>When to call</p>
+      </div>
+      <div class="trigger-content">
+        <p class="eyebrow">Bring Adaptance in when...</p>
+        <h2 id="trigger-heading">You know something needs to change, but the next step is unclear.</h2>
+        <ol class="trigger-list">
+          <li>
+            <Icon name="signpost" />
+            <p>People agree the current process is not working, but not where to start.</p>
+          </li>
+          <li>
+            <Icon name="refresh-cw-off" />
+            <p>A pilot worked, but never became normal work.</p>
+          </li>
+          <li>
+            <Icon name="unplug" />
+            <p>A digital process looks simple on paper and creates extra work in practice.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <section class="friction-section" id="bottom-line" aria-labelledby="bottom-line-heading">
       <div class="section-rail">
-        <span aria-hidden="true"></span>
-        <p>Bottom line</p>
+        <span>03</span>
+        <p>The real gap</p>
       </div>
       <div class="friction-content">
-        <p class="eyebrow">Bottom line</p>
+        <p class="eyebrow">From uncertainty to action</p>
         <h2 id="bottom-line-heading">The tool is rarely the whole problem.</h2>
         <p class="section-lead">
           New technology can be introduced in days. Decisions, routines and ownership take longer to
@@ -121,7 +146,7 @@ import {
         <p class="friction-conclusion">
           We look at the work around the technology, then choose one useful change to start with.
         </p>
-        <aside class="delivery-band" aria-label="How the work is staffed">
+        <!-- <aside class="delivery-band" aria-label="How the work is staffed">
           <div class="delivery-band-lead">
             <img src="/adaptance-mark.svg" alt="" width="512" height="512" aria-hidden="true" />
             <div>
@@ -129,7 +154,7 @@ import {
               <strong>One lead, and the disciplines the problem needs</strong>
             </div>
           </div>
-        </aside>
+        </aside> -->
         <figure class="work-figure">
           <img
             src={workshopImageUrl}
@@ -156,31 +181,63 @@ import {
       </div>
     </section>
 
-    <section class="trigger-section" id="when" aria-labelledby="trigger-heading">
-      <div class="section-rail section-rail-dark">
-        <span>04</span>
-        <p>When to call</p>
+
+    <section class="method-section" id="method" aria-labelledby="method-heading">
+      <div class="method-intro">
+        <p class="section-index">04 / Reveal. Align. Act.</p>
+        <h2 id="method-heading">Reveal. Align. Act.</h2>
+        <p>See what is happening. Agree what matters. Start with one useful change.</p>
       </div>
-      <div class="trigger-content">
-        <p class="eyebrow eyebrow-amber">When to call</p>
-        <h2 id="trigger-heading">You know something needs to change, but the next step is unclear.</h2>
-        <div class="trigger-list">
-          <article>
-            <Icon name="signpost" />
-            <span>01</span>
-            <p>People agree the current process is not working, but not where to start.</p>
-          </article>
-          <article>
-            <Icon name="refresh-cw-off" />
-            <span>02</span>
-            <p>A pilot worked, but never became normal work.</p>
-          </article>
-          <article>
-            <Icon name="unplug" />
-            <span>03</span>
-            <p>A digital process looks simple on paper and creates extra work in practice.</p>
-          </article>
+      <div class="method-steps">
+        <article>
+          <div class="method-card-top">
+            <span class="method-number">01</span>
+            <Icon name="search" />
+          </div>
+          <p class="method-verb">Reveal</p>
+          <h3>Map the real workflow and the points where work gets stuck.</h3>
+          <strong class="method-output">Output · Reality and constraint map</strong>
+        </article>
+        <article>
+          <div class="method-card-top">
+            <span class="method-number">02</span>
+            <Icon name="users" />
+          </div>
+          <p class="method-verb">Align</p>
+          <h3>Agree what matters now, who owns it and what can wait.</h3>
+          <strong class="method-output">Output · Priority decision</strong>
+        </article>
+        <article class="method-action">
+          <div class="method-card-top">
+            <span class="method-number">03</span>
+            <Icon name="route" />
+          </div>
+          <p class="method-verb">Act</p>
+          <h3>Test one change in real work and learn from it.</h3>
+          <strong class="method-output">Output · Action backlog</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="sprint-section" id="sprint" aria-labelledby="sprint-heading">
+      <div class="sprint-title">
+        <p class="section-index section-index-light">05 / The Adaptance Sprint</p>
+        <h2 id="sprint-heading">Start with one problem that matters.</h2>
+      </div>
+      <div class="sprint-body">
+        <p>
+          Bring one concrete challenge. In a focused engagement, we find what is blocking it, agree
+          the first move and leave you with practical next steps.
+        </p>
+        <div class="sprint-outputs" aria-label="Adaptance Sprint outputs">
+          <div><Icon name="scan-search" /><span>01</span><strong>Constraint map</strong></div>
+          <div><Icon name="list-checks" /><span>02</span><strong>Priority decision</strong></div>
+          <div><Icon name="flask-conical" /><span>03</span><strong>Experiment backlog</strong></div>
+          <div><Icon name="route" /><span>04</span><strong>First implementation steps</strong></div>
         </div>
+        <a class="button button-paper" href={linkedinUrl} target="_blank" rel="noreferrer">
+          Discuss a sprint with Adaptance <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 
@@ -228,7 +285,7 @@ import {
 
       <div class="team-copy">
         <p class="section-index team-section-index">
-          <span>05</span>
+          <span>06</span>
           <span>A small, reliable team</span>
         </p>
         <h2 id="team-heading">A small team, built around the work.</h2>
@@ -246,64 +303,7 @@ import {
       </div>
     </section>
 
-    <section class="method-section" id="method" aria-labelledby="method-heading">
-      <div class="method-intro">
-        <p class="section-index">03 / Reveal. Align. Act.</p>
-        <h2 id="method-heading">Reveal. Align. Act.</h2>
-        <p>See what is happening. Agree what matters. Start with one useful change.</p>
-      </div>
-      <div class="method-steps">
-        <article>
-          <div class="method-card-top">
-            <span class="method-number">01</span>
-            <Icon name="search" />
-          </div>
-          <p class="method-verb">Reveal</p>
-          <h3>Map the real workflow and the points where work gets stuck.</h3>
-          <strong class="method-output">Output · Reality and constraint map</strong>
-        </article>
-        <article>
-          <div class="method-card-top">
-            <span class="method-number">02</span>
-            <Icon name="users" />
-          </div>
-          <p class="method-verb">Align</p>
-          <h3>Agree what matters now, who owns it and what can wait.</h3>
-          <strong class="method-output">Output · Priority decision</strong>
-        </article>
-        <article class="method-action">
-          <div class="method-card-top">
-            <span class="method-number">03</span>
-            <Icon name="route" />
-          </div>
-          <p class="method-verb">Act</p>
-          <h3>Test one change in real work and learn from it.</h3>
-          <strong class="method-output">Output · Action backlog</strong>
-        </article>
-      </div>
-    </section>
 
-    <section class="sprint-section" id="sprint" aria-labelledby="sprint-heading">
-      <div class="sprint-title">
-        <p class="section-index section-index-light">02 / The Adaptance Sprint</p>
-        <h2 id="sprint-heading">Start with one problem that matters.</h2>
-      </div>
-      <div class="sprint-body">
-        <p>
-          Bring one concrete challenge. In a focused engagement, we find what is blocking it, agree
-          the first move and leave you with practical next steps.
-        </p>
-        <div class="sprint-outputs" aria-label="Adaptance Sprint outputs">
-          <div><Icon name="scan-search" /><span>01</span><strong>Constraint map</strong></div>
-          <div><Icon name="list-checks" /><span>02</span><strong>Priority decision</strong></div>
-          <div><Icon name="flask-conical" /><span>03</span><strong>Experiment backlog</strong></div>
-          <div><Icon name="route" /><span>04</span><strong>First implementation steps</strong></div>
-        </div>
-        <a class="button button-paper" href={linkedinUrl} target="_blank" rel="noreferrer">
-          Discuss a sprint with Adaptance <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </section>
 
     <section class="closing-section">
       <div class="closing-question">
