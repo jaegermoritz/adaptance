@@ -22,9 +22,9 @@ test("renders the Adaptance landing page with local production assets", async ()
   assert.match(html, /Reveal\. Align\. Act\./);
   assert.match(html, /adaptance-logo-light\.svg/);
   assert.match(html, /images\/workshop-mapping-sebastien-bonneval\.jpg/);
-  assert.match(html, /images\/team-collaboration-luke-miller\.jpg/);
+  assert.match(html, /images\/team-workshop-md-jawadur-rahman\.jpg/);
   assert.match(html, /Constraint map/);
-  assert.match(html, /Finance &amp; grants/);
+  assert.match(html, /Finance and grants/);
   assert.match(html, /rel="canonical" href="https:\/\/adaptance\.org\/"/);
   assert.match(html, /href="\/privacy\/"/);
   assert.doesNotMatch(html, /<form\b/i);
@@ -71,6 +71,38 @@ test("keeps the Reality Map labels and drops inflated language", async () => {
   ]) {
     assert.doesNotMatch(html, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
   }
+});
+
+test("keeps the A-within-D mark visible next to the wordmark in the header", async () => {
+  const html = await readPage("dist/index.html");
+  const header = html.match(/<header class="site-header">[\s\S]*?<\/header>/)?.[0] ?? "";
+
+  assert.match(header, /adaptance-mark\.svg/);
+  assert.match(header, /adaptance-logo-light\.svg/);
+});
+
+test("shows the documentary team photograph with a source credit off the image", async () => {
+  const html = await readPage("dist/index.html");
+  const teamPhoto = html.match(/<figure class="team-photo">[\s\S]*?<\/figure>/)?.[0] ?? "";
+
+  assert.match(teamPhoto, /images\/team-workshop-md-jawadur-rahman\.jpg/);
+  assert.match(teamPhoto, /Photo · Md Jawadur Rahman \/ Pexels/);
+  assert.match(
+    teamPhoto,
+    /https:\/\/www\.pexels\.com\/photo\/collaborative-team-meeting-with-casual-notes-32074767\//,
+  );
+  assert.doesNotMatch(teamPhoto, /luke-miller|Luke Miller|Trusted specialists/i);
+});
+
+test("shows the four team areas as one static accountable team", async () => {
+  const html = await readPage("dist/index.html");
+  const teamMap = html.match(/<div class="team-map"[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/)?.[0] ?? "";
+
+  assert.match(teamMap, /Systems and change/);
+  assert.match(teamMap, /Software delivery/);
+  assert.match(teamMap, /Finance and grants/);
+  assert.match(teamMap, /Programme management/);
+  assert.match(teamMap, /One accountable team/);
 });
 
 test("keeps at most three primary conversation CTAs", async () => {

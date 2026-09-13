@@ -1,6 +1,6 @@
 export const linkedinUrl = "https://www.linkedin.com/in/moritz-jaeger-innovator";
 export const workshopImageUrl = "/images/workshop-mapping-sebastien-bonneval.jpg";
-export const teamImageUrl = "/images/team-collaboration-luke-miller.jpg";
+export const teamImageUrl = "/images/team-workshop-md-jawadur-rahman.jpg";
 
 export const homeTitle = "Adaptance | From uncertainty to action";
 export const homeDescription =

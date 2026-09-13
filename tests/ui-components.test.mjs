@@ -38,9 +38,36 @@ test("keeps the method numbers prominent and the Act card readable", async () =>
 test("keeps the hero accent below the headline and removes the diagonal overlay", async () => {
   const css = await readFile(path.join(root, "src", "styles", "global.css"), "utf8");
 
-  assert.match(css, /\.hero h1 span::after/);
+  assert.match(css, /\.hero h1 \{[^}]*padding-bottom/);
+  assert.match(css, /\.hero h1::after \{[^}]*left:\s*0/);
+  assert.doesNotMatch(css, /\.hero h1 span::after/);
   assert.doesNotMatch(css, /\.hero::before/);
   assert.doesNotMatch(css, /clip-path/);
+});
+
+test("keeps the mobile hero short enough for the Reality Map to appear", async () => {
+  const css = await readFile(path.join(root, "src", "styles", "global.css"), "utf8");
+  const phone = css.split("@media (max-width: 520px)")[1] ?? "";
+
+  assert.match(css, /\.hero h1 \{[^}]*max-width:\s*(?:min\()?1[4-9]ch/);
+  assert.match(phone, /\.hero-audience \{ display: none; \}/);
+});
+
+test("keeps the team photograph credit off the image", async () => {
+  const css = await readFile(path.join(root, "src", "styles", "global.css"), "utf8");
+
+  assert.doesNotMatch(css, /\.team-photo figcaption \{[^}]*position:\s*absolute/);
+});
+
+test("stacks wide landing grids before phone widths so the page cannot overflow", async () => {
+  const css = await readFile(path.join(root, "src", "styles", "global.css"), "utf8");
+  const phone = css.split("@media (max-width: 820px)")[1]?.split("@media")[0] ?? "";
+
+  assert.match(css, /body \{[^}]*overflow-x:\s*hidden/);
+  assert.match(phone, /\.closing-section \{[^}]*grid-template-columns:\s*1fr/);
+  assert.match(phone, /\.team-section \{[^}]*grid-template-columns:\s*1fr/);
+  assert.match(css, /\.team-section-index \{[^}]*white-space:\s*nowrap/);
+  assert.doesNotMatch(phone, /minmax\(\s*(3[4-9][0-9]|[4-9][0-9]{2})px/);
 });
 
 test("ships the selected A within D mark as the compact icon", async () => {
